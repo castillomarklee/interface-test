@@ -23,6 +23,7 @@ const ComponentTwo = () => {
   }
 
   const onReadMoreClick = (id: number) => {
+    //Could add redirect here
     console.log(`The element with ${id} has been clicked`)
   }
 
