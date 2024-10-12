@@ -60,15 +60,16 @@ const ComponentTwo = () => {
               mt="60px"
             >
               {COMP_2_CONTENT.map((content) => (
-                <ContentCard
-                  key={content.id}
-                  imgProps={content}
-                  onImgClick={(data) => {
-                    onImgClick(data)
-                    onOpen?.call(null)
-                  }}
-                  onReadMoreClick={(data) => onReadMoreClick(data.id)}
-                />
+                <Box key={content.id} mb={{ base: '80px', md: '0', lg: '0' }}>
+                  <ContentCard
+                    imgProps={content}
+                    onImgClick={(data) => {
+                      onImgClick(data)
+                      onOpen?.call(null)
+                    }}
+                    onReadMoreClick={(data) => onReadMoreClick(data.id)}
+                  />
+                </Box>
               ))}
             </Grid>
           </Box>

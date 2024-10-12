@@ -51,7 +51,12 @@ const ComponentOne = () => {
             gap={6}
           >
             <GridItem>
-              <Box h="600px" w="384px" overflow="hidden">
+              <Box
+                h={{ base: '100%', md: '600px', lg: '600px' }}
+                w={{ base: '100%', md: '384px', lg: '384px' }}
+                overflow="hidden"
+                p={{ base: '0 10px', md: '0', lg: '0' }}
+              >
                 <Image
                   id="com-1-img-01"
                   src={fisrtImgSrc}
@@ -70,11 +75,15 @@ const ComponentOne = () => {
             </GridItem>
             {
               !!moreImages.length && (
-                <GridItem>
+                <GridItem p={{ base: '0 10px', md: '0', lg: '0' }}>
                   <Grid row="2" gap={5}>
                     {moreImages.map((imgSrc, index) => (
                       <Box key={index}>
-                        <Box h="290px" w="384px" overflow="hidden">
+                        <Box
+                          h={{ base: '184px', md: '290px', lg: '290px' }}
+                          w={{ base: '254px', md: '384px', lg: '384px' }} 
+                          overflow="hidden"
+                        >
                           <Image
                             id="com-1-img-02"
                             src={imgSrc}

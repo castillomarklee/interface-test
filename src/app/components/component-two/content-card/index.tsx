@@ -53,10 +53,10 @@ const ContentCard = ({
   } = imgProps
 
   return (
-    <Box>
+    <Box p={{ base: '0 20px', md: '0 20px', lg: '0 20px' }}>
       <Box
-        h="290px"
-        w="384px"
+        h={{ base: '184px', md: '290px', lg: '290px' }}
+        w={{ base: '254px', md: '384px', lg: '384px' }}
         overflow="hidden"
         borderBottom="5px solid red"
         transition="0.5s ease-in-out"
@@ -75,7 +75,7 @@ const ContentCard = ({
           onClick={handleImgClick}
         />
       </Box>
-      <Box w="375px">
+      <Box w={{ base: '260px', md: '384px', lg: '384px' }}>
         <Heading
           className={openSans.className}
           fontSize="18px"
