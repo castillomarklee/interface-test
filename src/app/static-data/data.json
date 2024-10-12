@@ -1,0 +1,28 @@
+{
+  "COMP_1_CONTENT": {
+    "title": "ANSWER YOUR BODY'S NEEDS",
+    "content": "The way ingredients are srouced affects the way we nourish our bodies. Authr Mark Schatzer believes our body naturally develops an appetite for the foods and nutrients it needs to be healthy but that artificial flavourings are getting in the way. This can be reveresed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.",
+    "subtitle": "Be Mindful",
+    "subcontent": "Sourcing local or organic food is a good way to start being more midful about what you're cooking and eating."
+  },
+  "COMP_2_CONTENT": [
+    {
+      "id": 1,
+      "imgSrc": "/assets/component-02/Image-01.jpg",
+      "title": "Summer Lunch Menu By Mark Best",
+      "description": "AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home."
+    },
+    {
+      "id": 2,
+      "imgSrc": "/assets/component-02/Image-02.jpg",
+      "title": "A Traditional Christmas Eve, Mark Best Style",
+      "description": "One of Australia's best chefs and AEG ambassador, Mark Best, shares his favourite Christmas Eve menu which is sure to impress your guests."
+    },
+    {
+      "id": 3,
+      "imgSrc": "/assets/component-02/Image-03.jpg",
+      "title": "Taking Taste Further",
+      "description": "This exclusive cookbook gives you all the know-how you need. We've designed it to make sure you get the most out of our products - and the best out of your food."
+    }
+  ]
+}
