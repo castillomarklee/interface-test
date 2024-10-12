@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { Open_Sans } from "@next/font/google"
 
@@ -13,12 +15,22 @@ export interface ContentCardProps {
   description: string
 }
 
+/**
+ * A component that displays a card with an image, title, description and a 'Read more' link.
+ *
+ * @param {ContentCardProps} props - The props for the component.
+ * @returns {JSX.Element} - The component.
+ */
 const ContentCard = ({
   description,
   id,
   imgSrc,
   title
 }: ContentCardProps) => {
+  const handleReadMoreClick = () => {
+    console.log(`content with ${id} and title ${title} was clicked`)
+  }
+
   return (
     <Box>
       <Box
@@ -87,6 +99,7 @@ const ContentCard = ({
               clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)'
             }
           }}
+          onClick={handleReadMoreClick}
         >
           Read more
         </Text>

@@ -1,7 +1,22 @@
+'use client'
+
 import { Box, Flex, Grid, GridItem, Image } from "@chakra-ui/react"
 import TextContent from "./text-content"
+import { handleContentClicks } from "@/app/utils/comp-events"
+import STATIC_DATA from '../../static-data/data.json'
 
 const ComponentOne = () => {
+  const { COMP_1_CONTENT } = STATIC_DATA
+
+  const hasImages = !!COMP_1_CONTENT.images.length
+
+  const fisrtImgSrc = hasImages ? COMP_1_CONTENT.images[0] : ''
+
+  /**
+   * moreImages assumes there are 2 or more images. It will only get the 2nd and 3rd images to display.
+   */
+  const moreImages = hasImages ? COMP_1_CONTENT.images.slice(1, COMP_1_CONTENT.images.length) : []
+
   return (
     <Flex
       padding={{
@@ -25,39 +40,43 @@ const ComponentOne = () => {
         <GridItem>
           <Box h="600px" w="384px" overflow="hidden">
             <Image
-              src="/assets/component-01/Image-01.jpg"
+              id="com-1-img-01"
+              src={fisrtImgSrc}
               alt="img_01"
               transition="0.3s"
               _hover={{
-                transform: 'scale(1.1)'
+                transform: 'scale(1.1)',
+                cursor: 'pointer'
               }}
+              onClick={(event) => handleContentClicks(event)}
             />
           </Box>
         </GridItem>
-        <GridItem>
-          <Grid row="2" gap={5}>
-            <Box h="290px" w="384px" overflow="hidden">
-              <Image 
-                src="/assets/component-01/Image-02.jpg" 
-                alt="img_02" 
-                transition="0.3s"
-                _hover={{
-                  transform: 'scale(1.1)'
-                }}
-              />
-            </Box>
-            <Box h="290px" w="384px" overflow="hidden">
-              <Image 
-                src="/assets/component-01/Image-03.jpg" 
-                alt="img_03" 
-                transition="0.3s"
-                _hover={{
-                  transform: 'scale(1.1)'
-                }}
-              />
-            </Box>
-          </Grid>
-        </GridItem>
+        {
+          !!moreImages.length && (
+            <GridItem>
+              <Grid row="2" gap={5}>
+                {moreImages.map((imgSrc, index) => (
+                  <Box key={index}>
+                    <Box h="290px" w="384px" overflow="hidden">
+                      <Image
+                        id="com-1-img-02"
+                        src={imgSrc}
+                        alt="img_02"
+                        transition="0.3s"
+                        _hover={{
+                          transform: 'scale(1.1)',
+                          cursor: 'pointer'
+                        }}
+                        onClick={(event) => handleContentClicks(event)}
+                      />
+                    </Box>
+                  </Box>
+                ))}
+              </Grid>
+            </GridItem>
+          )
+        }
         <GridItem>
           <Box maxWidth={'384px'} pt="10px">
             <TextContent />

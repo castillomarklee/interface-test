@@ -1,11 +1,15 @@
+'use client'
+
 import { Box, Divider, Heading, Text } from "@chakra-ui/react"
 import { Open_Sans } from '@next/font/google'
 import STATIC_DATA from '../../../static-data/data.json'
+import { handleContentClicks } from "@/app/utils/comp-events"
 
 const openSans = Open_Sans({
   subsets: ['latin'],
   weight: ['300', '500', '400', '600', '700', '800'],
 })
+
 
 const TextContent = () => {
   const { COMP_1_CONTENT } = STATIC_DATA
@@ -13,11 +17,16 @@ const TextContent = () => {
     <Box w="100%">
       <Box>
         <Heading
+          id="comp-1-heading"
           className={openSans.className}
           fontSize="25px"
           color="white"
           mb="15px"
           fontWeight="300"
+          _hover={{
+            cursor: 'pointer'
+          }}
+          onClick={(event) => handleContentClicks(event)}
         >
           {COMP_1_CONTENT.title}
         </Heading>

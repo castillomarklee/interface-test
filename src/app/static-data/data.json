@@ -1,5 +1,11 @@
 {
   "COMP_1_CONTENT": {
+    "id": 1,
+    "images": [
+      "/assets/component-01/Image-01.jpg",
+      "/assets/component-01/Image-02.jpg",
+      "/assets/component-01/Image-03.jpg"
+    ],
     "title": "ANSWER YOUR BODY'S NEEDS",
     "content": "The way ingredients are srouced affects the way we nourish our bodies. Authr Mark Schatzer believes our body naturally develops an appetite for the foods and nutrients it needs to be healthy but that artificial flavourings are getting in the way. This can be reveresed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.",
     "subtitle": "Be Mindful",
