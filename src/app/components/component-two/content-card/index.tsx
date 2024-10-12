@@ -2,17 +2,24 @@
 
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { Open_Sans } from "@next/font/google"
+import { img } from "framer-motion/client"
 
 const openSans = Open_Sans({
   subsets: ['latin'],
   weight: ['300', '500', '400', '600', '700', '800'],
 })
 
-export interface ContentCardProps {
+export interface ImgProps {
   id: number
   imgSrc: string
   title: string
   description: string
+}
+
+export interface ContentCardProps {
+  imgProps: ImgProps
+  onImgClick?: (imgProps: ImgProps) => void
+  onReadMoreClick?: (imgProps: ImgProps) => void
 }
 
 /**
@@ -22,14 +29,28 @@ export interface ContentCardProps {
  * @returns {JSX.Element} - The component.
  */
 const ContentCard = ({
-  description,
-  id,
-  imgSrc,
-  title
+  imgProps,
+  onImgClick,
+  onReadMoreClick
 }: ContentCardProps) => {
   const handleReadMoreClick = () => {
-    console.log(`content with ${id} and title ${title} was clicked`)
+    if (onReadMoreClick) {
+      onReadMoreClick(imgProps)
+    }
   }
+
+  const handleImgClick = () => {
+    if (onImgClick) {
+      onImgClick(imgProps)
+    }
+  }
+
+  const {
+    description,
+    imgSrc,
+    title,
+    id
+  } = imgProps
 
   return (
     <Box>
@@ -48,8 +69,10 @@ const ContentCard = ({
           alt="img_02_01"
           transition="0.3s"
           _hover={{
-            transform: 'scale(1.1)'
+            transform: 'scale(1.1)',
+            cursor: 'pointer'
           }}
+          onClick={handleImgClick}
         />
       </Box>
       <Box w="375px">
@@ -75,6 +98,7 @@ const ContentCard = ({
       </Box>
       <Box mt="50px">
         <Text
+          id={`read-more-link-${id}`}
           as="a"
           display="inline-block"
           color="white"
